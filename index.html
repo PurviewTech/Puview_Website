@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PurviewTech - AI XR Solutions | Transforming Reality</title>
+    <meta name="description" content="Purview Technologies transforms industries with intelligent AI XR solutions. Smart glasses, AR assistive aids, and enterprise solutions for field service, healthcare, manufacturing and more." />
+    <meta name="author" content="Purview Technologies" />
+    <meta name="keywords" content="AI XR, Augmented Reality, Smart Glasses, SEVA, Enterprise AR, Field Service, Healthcare AR" />
+
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
+
+    <meta property="og:title" content="PurviewTech - AI XR Solutions | Transforming Reality" />
+    <meta property="og:description" content="Transforming industries with intelligent AI XR solutions. Smart glasses, AR assistive aids, and enterprise solutions." />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@PurviewTech" />
+    <meta name="twitter:title" content="PurviewTech - AI XR Solutions" />
+    <meta name="twitter:description" content="Transforming industries with intelligent AI XR solutions." />
+
+    <link rel="canonical" href="https://purviewtech.ai/" />
+  </head>
+
+  <body>
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        // Default to dark theme if no theme is stored
+        if (theme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          // Default to dark mode (when theme is null, undefined, or 'dark')
+          document.documentElement.classList.add('dark');
+          if (!theme) {
+            localStorage.setItem('theme', 'dark');
+          }
+        }
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
