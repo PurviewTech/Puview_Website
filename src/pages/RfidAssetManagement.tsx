@@ -206,7 +206,7 @@ export default function RfidAssetManagement() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold mb-2">
-                      Office Asset Management
+                      Industries
                     </h3>
                     <p className="text-muted-foreground text-sm mb-4">
                       Track IT devices and office equipment with real-time
