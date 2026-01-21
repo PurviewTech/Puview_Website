@@ -4,37 +4,49 @@ import { Footer } from "@/components/layout/Footer";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { FadeInText } from "@/components/ui/AnimatedText";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { Target, Eye, Award, Users, Calendar, Globe, TrendingUp } from "lucide-react";
+import {
+  Target,
+  Eye,
+  Award,
+  Users,
+  Calendar,
+  Globe,
+  TrendingUp,
+} from "lucide-react";
 import { useEffect } from "react";
 
 const values = [
   {
     icon: <Target className="w-5 h-5" />,
     title: "Mission",
-    description: "To transform how industries operate through intelligent AI XR solutions that enhance productivity and accessibility."
-  }, 
+    description:
+      "To transform how industries operate through intelligent AI XR solutions that enhance productivity and accessibility.",
+  },
   {
     icon: <Eye className="w-5 h-5" />,
     title: "Vision",
-    description: "A world where technology bridges gaps, empowers individuals, and creates seamless human-digital experiences."
-  }, 
+    description:
+      "A world where technology bridges gaps, empowers individuals, and creates seamless human-digital experiences.",
+  },
   {
     icon: <Award className="w-5 h-5" />,
     title: "Excellence",
-    description: "Committed to delivering cutting-edge solutions that exceed expectations and drive measurable outcomes."
-  }, 
+    description:
+      "Committed to delivering cutting-edge solutions that exceed expectations and drive measurable outcomes.",
+  },
   {
     icon: <Users className="w-5 h-5" />,
     title: "Inclusion",
-    description: "Creating technology that's accessible to all, including assistive solutions for sensory impairments."
-  }
+    description:
+      "Creating technology that's accessible to all, including assistive solutions for sensory impairments.",
+  },
 ];
 
 const stats = [
   { value: "2019", label: "Founded", icon: <Calendar className="w-5 h-5" /> },
   { value: "50+", label: "Enterprise Clients", icon: <Users className="w-5 h-5" /> },
   { value: "15+", label: "Countries", icon: <Globe className="w-5 h-5" /> },
-  { value: "100%", label: "Commitment", icon: <TrendingUp className="w-5 h-5" /> }
+  { value: "100%", label: "Commitment", icon: <TrendingUp className="w-5 h-5" /> },
 ];
 
 const About = () => {
@@ -47,14 +59,14 @@ const About = () => {
     <PageTransition>
       <div className="min-h-screen bg-background text-foreground">
         <Navbar />
-        
+
         {/* Hero Section */}
         <section className="pt-32 pb-16 sm:pt-40 sm:pb-24 relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
           </div>
-          
+
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
               <FadeInText>
@@ -62,15 +74,17 @@ const About = () => {
                   About Purview Technologies
                 </span>
               </FadeInText>
+
               <FadeInText delay={0.1}>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 text-foreground tracking-tight">
                   Leading <span className="text-primary">AI Innovation</span> in XR Solutions
                 </h1>
               </FadeInText>
+
               <FadeInText delay={0.2}>
                 <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
-                  Purview Technologies is at the forefront of transforming industries through intelligent 
-                  AI XR solutions. We combine cutting-edge augmented reality with advanced artificial 
+                  Purview Technologies is at the forefront of transforming industries through intelligent
+                  AI XR solutions. We combine cutting-edge augmented reality with advanced artificial
                   intelligence to create experiences that empower both enterprises and individuals.
                 </p>
               </FadeInText>
@@ -81,21 +95,22 @@ const About = () => {
         {/* Stats Section */}
         <section className="py-16 sm:py-24 relative bg-card/30">
           <div className="container mx-auto px-4 sm:px-6">
-            <motion.div 
-              className="grid grid-cols-2 md:grid-cols-4 gap-6" 
+            <motion.div
+              className="grid grid-cols-2 md:grid-cols-4 gap-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
               {stats.map((stat, index) => (
-                <GlassCard key={index} className="p-6 text-center group" delay={index * 0.1}>
+                <GlassCard key={stat.label} className="p-6 text-center group" delay={index * 0.1}>
                   <div className="flex justify-center mb-3">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
                       {stat.icon}
                     </div>
                   </div>
-                  <motion.div 
+
+                  <motion.div
                     className="text-3xl sm:text-4xl font-semibold text-foreground mb-1"
                     initial={{ scale: 0.9 }}
                     whileInView={{ scale: 1 }}
@@ -104,6 +119,7 @@ const About = () => {
                   >
                     {stat.value}
                   </motion.div>
+
                   <p className="text-muted-foreground text-sm">{stat.label}</p>
                 </GlassCard>
               ))}
@@ -129,8 +145,8 @@ const About = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {values.map((value, index) => (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={value.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -145,9 +161,7 @@ const About = () => {
                         <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
                           {value.title}
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {value.description}
-                        </p>
+                        <p className="text-muted-foreground leading-relaxed">{value.description}</p>
                       </div>
                     </div>
                   </GlassCard>
@@ -168,20 +182,23 @@ const About = () => {
                     Meet Our <span className="text-primary">Revolutionary Team</span>
                   </h2>
                 </FadeInText>
+
                 <FadeInText delay={0.1}>
                   <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                    Behind every breakthrough innovation is a team of passionate visionaries. Our diverse group 
-                    of engineers, designers, and researchers work tirelessly to push the boundaries of what's 
+                    Behind every breakthrough innovation is a team of passionate visionaries. Our diverse group
+                    of engineers, designers, and researchers work tirelessly to push the boundaries of what's
                     possible in AI and XR technology.
                   </p>
                 </FadeInText>
+
                 <FadeInText delay={0.2}>
                   <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                    From developing cutting-edge smart solutions to creating accessible assistive technologies, 
-                    our team combines technical expertise with human empathy to build products that truly 
-                    make a difference in people's lives.
+                    From developing cutting-edge smart solutions to creating accessible assistive technologies,
+                    our team combines technical expertise with human empathy to build products that truly make a
+                    difference in people's lives.
                   </p>
                 </FadeInText>
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -223,38 +240,41 @@ const About = () => {
                         loading="lazy"
                       />
                     </div>
-                    
+
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-                    
+
                     {/* Subtle Border */}
                     <div className="absolute inset-0 rounded-2xl ring-1 ring-white/10" />
                   </div>
-                  
-                  {/* Decorative Background Elements */}
-                  <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full blur-2xl -z-10" />
-                  <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-full blur-2xl -z-10" />
-                  
-                  {/* Team Info Card */}
+
+                  {/* ✅ Team Info Card BELOW the image */}
                   <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6"
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="mt-5"
                   >
-                    <div className="backdrop-blur-md bg-white/10 dark:bg-black/20 rounded-xl p-4 border border-white/20">
+                    <div className="rounded-xl p-4 border border-foreground/10 bg-card/60 backdrop-blur-md">
                       <div className="flex items-center justify-between">
                         <div>
-                          <h3 className="text-white font-semibold text-lg">Team Purview</h3>
-                          <p className="text-white/90 text-sm">Shaping the Future Together</p>
+                          <h3 className="text-foreground font-semibold text-lg">Team Purview</h3>
+                          <p className="text-muted-foreground text-sm">
+                            Shaping the Future Together
+                          </p>
                         </div>
-                        <div className="w-12 h-12 rounded-full bg-primary/30 backdrop-blur-sm flex items-center justify-center border border-white/20">
-                          <Users className="w-6 h-6 text-white" />
+
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
+                          <Users className="w-6 h-6 text-primary" />
                         </div>
                       </div>
                     </div>
                   </motion.div>
+
+                  {/* Decorative Background Elements */}
+                  <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full blur-2xl -z-10" />
+                  <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-full blur-2xl -z-10" />
                 </motion.div>
               </div>
             </div>

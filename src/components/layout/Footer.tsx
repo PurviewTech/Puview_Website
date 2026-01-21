@@ -100,7 +100,7 @@ export const Footer = () => {
                 </a>
                 <div className="flex items-start gap-3 text-muted-foreground">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm">London, United Kingdom</span>
+                  <span className="text-sm">Edinburgh, Scotland</span>
                 </div>
               </div>
             </motion.div>

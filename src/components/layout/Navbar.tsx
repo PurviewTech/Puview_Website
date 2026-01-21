@@ -11,19 +11,20 @@ interface NavItem {
   label: string;
   href: string;
   children?: { label: string; href: string; isRoute?: boolean }[];
-}
+} 
 
 const navItems: NavItem[] = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "/about" },
-  { 
-    label: "Offerings", 
+  {
+    label: "Offerings",
     href: "#services",
     children: [
       { label: "Industrial Solutions", href: "/industrial-solutions", isRoute: true },
+      { label: "Intelligent Asset Management", href: "/rfid-asset-management", isRoute: true }, // ✅ added
       { label: "NexAble Assistive Aids", href: "/assistive-aids", isRoute: true },
       { label: "AI XR Lab", href: "/augmented-labs", isRoute: true },
-    ]
+    ],
   },
   { label: "Contact Us", href: "#contact" },
 ];
@@ -36,9 +37,7 @@ export const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -48,7 +47,6 @@ export const Navbar = () => {
       navigate(href);
     } else if (href.startsWith("#")) {
       if (location.pathname !== "/") {
-        // Navigate to home page with state to indicate we want to scroll to contact
         if (href === "#contact") {
           navigate("/", { state: { scrollToContact: true } });
         } else {
@@ -57,9 +55,7 @@ export const Navbar = () => {
       } else {
         const id = href.replace("#", "");
         const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
+        if (element) element.scrollIntoView({ behavior: "smooth" });
       }
     }
     setIsMobileMenuOpen(false);
@@ -70,8 +66,8 @@ export const Navbar = () => {
       <motion.nav
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          isScrolled 
-            ? "bg-background/95 backdrop-blur-md border-b border-border py-4" 
+          isScrolled
+            ? "bg-background/95 backdrop-blur-md border-b border-border py-4"
             : "bg-transparent py-6"
         )}
         initial={{ y: -100 }}
@@ -90,14 +86,6 @@ export const Navbar = () => {
             whileHover={{ scale: 1.02 }}
           >
             <Logo className="h-16 w-auto" />
-            {/* <div className="flex flex-col">
-              <span className="text-xl font-bold text-foreground tracking-tight">
-                PURVIEW
-              </span>
-              <span className="text-[10px] tracking-[0.15em] text-muted-foreground uppercase">
-                Technologies
-              </span>
-            </div> */}
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -118,10 +106,12 @@ export const Navbar = () => {
                 >
                   {item.label}
                   {item.children && (
-                    <ChevronDown className={cn(
-                      "w-4 h-4 transition-transform",
-                      activeDropdown === item.label && "rotate-180"
-                    )} />
+                    <ChevronDown
+                      className={cn(
+                        "w-4 h-4 transition-transform",
+                        activeDropdown === item.label && "rotate-180"
+                      )}
+                    />
                   )}
                 </button>
 
@@ -155,8 +145,8 @@ export const Navbar = () => {
           {/* Theme Toggle & CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
             <ThemeToggle />
-            <MagneticButton 
-              variant="primary" 
+            <MagneticButton
+              variant="primary"
               size="sm"
               onClick={() => handleNavigation("#contact")}
             >
@@ -186,7 +176,7 @@ export const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div 
+            <div
               className="absolute inset-0 bg-background/80 backdrop-blur-md"
               onClick={() => setIsMobileMenuOpen(false)}
             />
@@ -206,6 +196,7 @@ export const Navbar = () => {
                     >
                       {item.label}
                     </button>
+
                     {item.children && (
                       <div className="ml-4 mt-2 space-y-2">
                         {item.children.map((child) => (
@@ -222,9 +213,10 @@ export const Navbar = () => {
                     )}
                   </div>
                 ))}
+
                 <div className="pt-4 mt-4 border-t border-border">
-                  <MagneticButton 
-                    variant="primary" 
+                  <MagneticButton
+                    variant="primary"
                     className="w-full"
                     onClick={() => handleNavigation("#contact")}
                   >

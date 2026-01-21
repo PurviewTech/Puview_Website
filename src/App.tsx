@@ -12,6 +12,7 @@ import IndustrialSolutions from "./pages/IndustrialSolutions";
 import AssistiveAids from "./pages/AssistiveAids";
 import AugmentedLabs from "./pages/AugmentedLabs";
 import AnimationDemo from "./pages/AnimationDemo";
+import RfidAssetManagement from "./pages/RfidAssetManagement"; // ✅ ADD
 import { ScrollProgress } from "./components/ui/ScrollProgress";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/3d-tour" element={<Tour3D />} />
         <Route path="/industrial-solutions" element={<IndustrialSolutions />} />
+        <Route path="/rfid-asset-management" element={<RfidAssetManagement />} /> {/* ✅ ADD */}
         <Route path="/assistive-aids" element={<AssistiveAids />} />
         <Route path="/augmented-labs" element={<AugmentedLabs />} />
         <Route path="/animation-demo" element={<AnimationDemo />} />
