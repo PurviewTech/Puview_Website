@@ -58,7 +58,7 @@ export default function RfidAssetManagement() {
   const [officeTab, setOfficeTab] = useState("overview");
 
   useEffect(() => {
-    document.title = "RFID Asset Management - PurviewTech";
+    document.title = "RFID/BLE Asset Management - PurviewTech";
     window.scrollTo(0, 0);
   }, []);
 
@@ -111,7 +111,7 @@ export default function RfidAssetManagement() {
             <div className="text-center max-w-4xl mx-auto">
               <FadeInText>
                 <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                  RFID Asset Management
+                  RFID/BLE Asset Management
                 </span>
               </FadeInText>
 
@@ -124,7 +124,7 @@ export default function RfidAssetManagement() {
 
               <FadeInText delay={0.2}>
                 <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto mb-8">
-                  RFID captures assets automatically (no line-of-sight), and AI
+                  RFID/BLE captures assets automatically (no line-of-sight), and AI
                   turns those reads into actions—real-time visibility, faster
                   audits, anomaly detection, and predictive operations. Built for{" "}
                   <span className="text-foreground font-medium">
@@ -259,13 +259,13 @@ export default function RfidAssetManagement() {
             <div className="text-center mb-10">
               <FadeInText>
                 <h2 className="text-3xl sm:text-4xl font-semibold">
-                  RFID for{" "}
+                  RFID/BLE for{" "}
                   <span className="text-primary">Enterprise & Facilities</span>
                 </h2>
               </FadeInText>
               <FadeInText delay={0.1}>
                 <p className="text-muted-foreground text-lg max-w-3xl mx-auto mt-3">
-                  Evidence-driven automation: RFID captures every movement
+                  Evidence-driven automation: RFID/BLE captures every movement
                   automatically, while AI highlights anomalies, predicts issues,
                   and recommends actions.
                 </p>
@@ -287,7 +287,7 @@ export default function RfidAssetManagement() {
                   {[
                     {
                       icon: <Radar className="w-5 h-5" />,
-                      title: "RFID Capture (No manual scans)",
+                      title: "RFID/BLE Capture (No manual scans)",
                       desc: "Readers detect tags automatically—no line-of-sight like barcodes.",
                     },
                     {
@@ -362,7 +362,7 @@ export default function RfidAssetManagement() {
                       <Card className="bg-background border-border">
                         <CardHeader className="pb-2">
                           <CardTitle className="text-lg text-primary">
-                            On-Metal RFID Tags
+                            On-Metal RFID/BLE Tags
                           </CardTitle>
                           <CardDescription>
                             For metal tools, racks, machinery
@@ -466,7 +466,7 @@ export default function RfidAssetManagement() {
                       <Card className="bg-background border-border">
                         <CardHeader>
                           <CardTitle className="text-xl text-primary">
-                            RFID Automation (What happens automatically)
+                            RFID/BLE Automation (What happens automatically)
                           </CardTitle>
                           <CardDescription>
                             Triggered by reads + rules (no manual updates)
@@ -697,7 +697,7 @@ export default function RfidAssetManagement() {
             <div className="text-center mb-10">
               <FadeInText>
                 <h2 className="text-3xl sm:text-4xl font-semibold">
-                  Smart RFID Solutions for{" "}
+                  Smart RFID/BLE Solutions for{" "}
                   <span className="text-primary">Office Asset Management</span>
                 </h2>
               </FadeInText>
@@ -713,7 +713,7 @@ export default function RfidAssetManagement() {
               <div className="flex justify-center mb-8">
                 <TabsList className="grid w-full max-w-2xl grid-cols-3">
                   <TabsTrigger value="overview">Overview</TabsTrigger>
-                  <TabsTrigger value="tags">RFID Tags</TabsTrigger>
+                  <TabsTrigger value="tags">RFID/BLE Tags</TabsTrigger>
                   <TabsTrigger value="benefits">Benefits</TabsTrigger>
                 </TabsList>
               </div>
@@ -726,7 +726,7 @@ export default function RfidAssetManagement() {
                       Automate Office Asset Visibility
                     </h3>
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      RFID replaces manual spreadsheets and ad-hoc barcode scans.
+                      RFID/BLE replaces manual spreadsheets and ad-hoc barcode scans.
                       Assets are tracked by zones and movement events, producing
                       an audit trail by default.
                     </p>
@@ -772,10 +772,10 @@ export default function RfidAssetManagement() {
               <TabsContent value="tags">
                 <div className="mb-6 text-center">
                   <h3 className="text-2xl font-semibold">
-                    Types of RFID Tags for Office Asset Management
+                    Types of RFID/BLE Tags for Office Asset Management
                   </h3>
                   <p className="text-muted-foreground mt-2">
-                    Choose the right RFID tags for your equipment and environment
+                    Choose the right RFID/BLE tags for your equipment and environment
                   </p>
                 </div>
 
@@ -805,7 +805,7 @@ export default function RfidAssetManagement() {
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 text-primary">
                         <Cpu className="h-6 w-6" />
                       </div>
-                      <CardTitle>IT Asset RFID Tags</CardTitle>
+                      <CardTitle>IT Asset RFID/BLE Tags</CardTitle>
                       <CardDescription>Optimized for electronics</CardDescription>
                     </CardHeader>
                     <CardContent className="text-sm text-muted-foreground space-y-3">
@@ -846,7 +846,7 @@ export default function RfidAssetManagement() {
               <TabsContent value="benefits">
                 <div className="mb-6 text-center">
                   <h3 className="text-2xl font-semibold">
-                    Benefits of RFID Asset Management
+                    Benefits of RFID/BLE Asset Management
                   </h3>
                   <p className="text-muted-foreground mt-2">
                     Automation + evidence for security, compliance, and audits
@@ -986,7 +986,7 @@ export default function RfidAssetManagement() {
             <div className="text-center mb-10">
               <FadeInText>
                 <h2 className="text-3xl sm:text-4xl font-semibold">
-                  RFID for{" "}
+                  RFID/BLE for{" "}
                   <span className="text-primary">Communities & Campuses</span>
                 </h2>
               </FadeInText>
@@ -1088,7 +1088,7 @@ export default function RfidAssetManagement() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                   <Card className="bg-background border-border">
                     <CardHeader>
-                      <CardTitle className="text-lg text-primary">RFID Gate</CardTitle>
+                      <CardTitle className="text-lg text-primary">RFID/BLE Gate</CardTitle>
                       <CardDescription>Entry/exit tracking + alerts</CardDescription>
                     </CardHeader>
                     <CardContent className="text-sm text-muted-foreground space-y-2">
@@ -1104,7 +1104,7 @@ export default function RfidAssetManagement() {
                   <Card className="bg-background border-border">
                     <CardHeader>
                       <CardTitle className="text-lg text-primary">
-                        Fixed UHF RFID Reader
+                        Fixed UHF RFID/BLE Reader
                       </CardTitle>
                       <CardDescription>Zones, rooms, storage</CardDescription>
                     </CardHeader>
@@ -1121,7 +1121,7 @@ export default function RfidAssetManagement() {
                   <Card className="bg-background border-border">
                     <CardHeader>
                       <CardTitle className="text-lg text-primary">
-                        Handheld RFID Reader
+                        Handheld RFID/BLE Reader
                       </CardTitle>
                       <CardDescription>Mobile audits + search</CardDescription>
                     </CardHeader>
@@ -1166,10 +1166,10 @@ export default function RfidAssetManagement() {
           <div className="container mx-auto px-4 sm:px-6">
             <GlassCard className="p-8 sm:p-12 text-center" glowColor="purple">
               <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
-                Want RFID for <span className="text-primary">Your Facility?</span>
+                Want RFID/BLE for <span className="text-primary">Your Facility?</span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                Deploy RFID automation with real-time visibility, audit evidence,
+                Deploy RFID/BLE automation with real-time visibility, audit evidence,
                 and AI-driven insights—across enterprises, offices, and
                 communities/campuses.
               </p>
